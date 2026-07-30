@@ -1,0 +1,368 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: QuangDV-DifyTraining02
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/azure_openai:0.0.34@d12c44c83a845ebe00b0285272011587bb118e2f411c546ffcfd9fe723d205ff
+    version: null
+kind: app
+version: 0.5.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: document-extractor
+      id: 1785306719374-true-1785290167138-target
+      selected: false
+      source: '1785306719374'
+      sourceHandle: 'true'
+      target: '1785290167138'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1785371131798-source-1785306719374-target
+      selected: false
+      source: '1785371131798'
+      sourceHandle: source
+      target: '1785306719374'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1785306719374-false-1785372522520-target
+      selected: false
+      source: '1785306719374'
+      sourceHandle: 'false'
+      target: '1785372522520'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: code
+      id: 1785290167138-source-1785372522520-target
+      selected: false
+      source: '1785290167138'
+      sourceHandle: source
+      target: '1785372522520'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1785372522520-source-1785344019467-target
+      selected: false
+      source: '1785372522520'
+      sourceHandle: source
+      target: '1785344019467'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1785344019467-source-1785405234069-target
+      source: '1785344019467'
+      sourceHandle: source
+      target: '1785405234069'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        is_array_file: true
+        selected: false
+        title: Doc Extractor
+        type: document-extractor
+        variable_selector:
+        - '1785371131798'
+        - conversation_data
+      height: 104
+      id: '1785290167138'
+      position:
+        x: 718.4684620064022
+        y: 46.82920362867014
+      positionAbsolute:
+        x: 718.4684620064022
+        y: 46.82920362867014
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: not empty
+            id: 20f61f0e-b2d2-4e0d-8362-a75f184bce1f
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - '1785371131798'
+            - conversation_data
+          id: 'true'
+          logical_operator: and
+        selected: false
+        title: Validate input file
+        type: if-else
+      height: 123
+      id: '1785306719374'
+      position:
+        x: 434
+        y: 276
+      positionAbsolute:
+        x: 434
+        y: 276
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gpt-4.1-2025-04-14
+          provider: langgenius/azure_openai/azure_openai
+        prompt_template:
+        - id: b01ebd8a-4953-4976-8cb1-62c684ce9d44
+          role: system
+          text: '# Instruction
+
+            You are an AI consultant assistant.
+
+            Analyze the {{#1785372522520.inpurt_summary#}} request and extract:
+
+            1. problem
+
+            2. goal
+
+            3. constraints
+
+            4. request_type
+
+            # Rules:
+
+            - Return JSON only.
+
+            - If information is missing, set null.
+
+            - Calculate confidence from 0 to 100.
+
+
+            # Output JSON schema:
+
+            {
+
+            "problem": "string|null",
+
+            "goal": "string|null",
+
+            "constraints": "string|null",
+
+            "request_type": "string|null",
+
+            "confidence": 0,
+
+            "missing_fields": [],
+
+            "needs_followup": false
+
+            }'
+        reasoning_format: tagged
+        selected: false
+        structured_output_enabled: true
+        title: Draft Content
+        type: llm
+        vision:
+          enabled: false
+      height: 87
+      id: '1785344019467'
+      position:
+        x: 1388.2788012113201
+        y: 349.4093691867236
+      positionAbsolute:
+        x: 1388.2788012113201
+        y: 349.4093691867236
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        selected: false
+        title: User Input
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          default: ''
+          hint: ''
+          label: conversation_data
+          max_length: 5
+          options: []
+          placeholder: ''
+          required: false
+          type: file
+          variable: conversation_data
+        - default: ''
+          hint: ''
+          label: inquiry_text
+          max_length: 1000
+          options: []
+          placeholder: ''
+          required: false
+          type: paragraph
+          variable: inquiry_text
+      height: 134
+      id: '1785371131798'
+      position:
+        x: 49.82938515335621
+        y: 276.7472267374093
+      positionAbsolute:
+        x: 49.82938515335621
+        y: 276.7472267374093
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "def main(inquiry_text=\"\", file_content=\"\"):\n    merged = \"\"\n\
+          \n    if inquiry_text:\n        merged += inquiry_text\n\n    if file_content:\n\
+          \        merged += \"\\n\\n\" + file_content\n\n    return {\n        \"\
+          inpurt_summary\": merged\n    }"
+        code_language: python3
+        outputs:
+          inpurt_summary:
+            children: null
+            type: string
+        selected: false
+        title: Merge Input
+        type: code
+        variables:
+        - value_selector:
+          - '1785290167138'
+          - text
+          value_type: array[string]
+          variable: file_content
+        - value_selector:
+          - '1785371131798'
+          - inquiry_text
+          value_type: string
+          variable: inquiry_text
+      height: 51
+      id: '1785372522520'
+      position:
+        x: 1012.1634830197975
+        y: 349.4093691867236
+      positionAbsolute:
+        x: 1012.1634830197975
+        y: 349.4093691867236
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        outputs:
+        - value_selector:
+          - '1785344019467'
+          - text
+          value_type: string
+          variable: text
+        selected: false
+        title: Output
+        type: end
+      height: 88
+      id: '1785405234069'
+      position:
+        x: 1690.2788012113201
+        y: 349.4093691867236
+      positionAbsolute:
+        x: 1690.2788012113201
+        y: 349.4093691867236
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: -652.7831648392867
+      y: 42.774525688570634
+      zoom: 0.5928315199853152
+  rag_pipeline_variables: []
