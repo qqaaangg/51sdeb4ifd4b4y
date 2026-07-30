@@ -3,7 +3,7 @@ app:
   icon: 🤖
   icon_background: '#FFEAD5'
   mode: advanced-chat
-  name: assd
+  name: QuangDV-DifyTraining01.1
   use_icon_as_answer_icon: false
 dependencies:
 - current_identifier: null
@@ -82,6 +82,7 @@ workflow:
         sourceType: code
         targetType: if-else
       id: 1785443058838-source-1785443078318-target
+      selected: false
       source: '1785443058838'
       sourceHandle: source
       target: '1785443078318'
@@ -93,6 +94,7 @@ workflow:
         sourceType: if-else
         targetType: if-else
       id: 1785443078318-true-1785443166239-target
+      selected: false
       source: '1785443078318'
       sourceHandle: 'true'
       target: '1785443166239'
@@ -104,6 +106,7 @@ workflow:
         sourceType: if-else
         targetType: document-extractor
       id: 1785443166239-true-1785443198928-target
+      selected: false
       source: '1785443166239'
       sourceHandle: 'true'
       target: '1785443198928'
@@ -115,6 +118,7 @@ workflow:
         sourceType: start
         targetType: code
       id: 1785442774408-source-1785443058838-target
+      selected: false
       source: '1785442774408'
       sourceHandle: source
       target: '1785443058838'
@@ -126,6 +130,7 @@ workflow:
         sourceType: if-else
         targetType: code
       id: 1785443166239-false-1785443252073-target
+      selected: false
       source: '1785443166239'
       sourceHandle: 'false'
       target: '1785443252073'
@@ -137,6 +142,7 @@ workflow:
         sourceType: document-extractor
         targetType: code
       id: 1785443198928-source-1785443252073-target
+      selected: false
       source: '1785443198928'
       sourceHandle: source
       target: '1785443252073'
@@ -148,6 +154,7 @@ workflow:
         sourceType: code
         targetType: llm
       id: 1785443252073-source-1785443326074-target
+      selected: false
       source: '1785443252073'
       sourceHandle: source
       target: '1785443326074'
@@ -159,6 +166,7 @@ workflow:
         sourceType: llm
         targetType: code
       id: 1785443326074-source-1785443997789-target
+      selected: false
       source: '1785443326074'
       sourceHandle: source
       target: '1785443997789'
@@ -170,6 +178,7 @@ workflow:
         sourceType: code
         targetType: assigner
       id: 1785443997789-source-1785444168751-target
+      selected: false
       source: '1785443997789'
       sourceHandle: source
       target: '1785444168751'
@@ -182,6 +191,7 @@ workflow:
         sourceType: assigner
         targetType: template-transform
       id: 1785444168751-source-1785446580708-target
+      selected: false
       source: '1785444168751'
       sourceHandle: source
       target: '1785446580708'
@@ -193,6 +203,7 @@ workflow:
         sourceType: template-transform
         targetType: answer
       id: 1785446580708-source-1785443962140-target
+      selected: false
       source: '1785446580708'
       sourceHandle: source
       target: '1785443962140'
@@ -205,6 +216,7 @@ workflow:
         sourceType: if-else
         targetType: code
       id: 1785443078318-false-1785448333692-target
+      selected: false
       source: '1785443078318'
       sourceHandle: 'false'
       target: '1785448333692'
@@ -216,6 +228,7 @@ workflow:
         sourceType: code
         targetType: assigner
       id: 1785448333692-source-17854484884870-target
+      selected: false
       source: '1785448333692'
       sourceHandle: source
       target: '17854484884870'
@@ -228,6 +241,7 @@ workflow:
         sourceType: assigner
         targetType: knowledge-retrieval
       id: 17854484884870-source-1785448596611-target
+      selected: false
       source: '17854484884870'
       sourceHandle: source
       target: '1785448596611'
@@ -240,6 +254,7 @@ workflow:
         sourceType: knowledge-retrieval
         targetType: llm
       id: 1785448596611-source-1785448643632-target
+      selected: false
       source: '1785448596611'
       sourceHandle: source
       target: '1785448643632'
@@ -252,6 +267,7 @@ workflow:
         sourceType: llm
         targetType: code
       id: 1785448643632-source-1785448711666-target
+      selected: false
       source: '1785448643632'
       sourceHandle: source
       target: '1785448711666'
@@ -264,6 +280,7 @@ workflow:
         sourceType: code
         targetType: template-transform
       id: 1785448711666-source-1785448767066-target
+      selected: false
       source: '1785448711666'
       sourceHandle: source
       target: '1785448767066'
@@ -276,6 +293,7 @@ workflow:
         sourceType: template-transform
         targetType: answer
       id: 1785448767066-source-1785448936869-target
+      selected: false
       source: '1785448767066'
       sourceHandle: source
       target: '1785448936869'
@@ -525,7 +543,7 @@ workflow:
       positionAbsolute:
         x: 2111
         y: 361.8
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -539,11 +557,11 @@ workflow:
       height: 102
       id: '1785443962140'
       position:
-        x: 3413.557469782451
-        y: 375.79999999999995
+        x: 3446.9032342456794
+        y: 380.79999999999995
       positionAbsolute:
-        x: 3413.557469782451
-        y: 375.79999999999995
+        x: 3446.9032342456794
+        y: 380.79999999999995
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -676,33 +694,29 @@ workflow:
       width: 242
     - data:
         selected: false
-        template: '{% set has_content = issue or purpose or constraints or request_type
-          %}<div style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:760px">{%
-          if not has_content %}<h3 style="margin:0 0 8px;font-size:16px;font-weight:500">Could
-          not read the inquiry</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#555">Please
-          paste the inquiry text, or attach the meeting minutes / call log as a document.</p>{%
-          else %}<h3 style="margin:0 0 4px;font-size:16px;font-weight:500">Inquiry
-          details</h3><p style="margin:0 0 16px;font-size:13px;color:#666">Correct
-          anything that is wrong, then press Approve. To add more context instead,
-          just type it in the chat.</p><div style="color:#333;margin-bottom:16px;padding:10px
-          14px;background:{% if confidence >= 70 %}#eaf5ea{% elif confidence >= 40
-          %}#fdf4e3{% else %}#fbeaea{% endif %};border-radius:6px;font-size:13px">Extraction
-          confidence: <strong>{{ confidence }}%</strong>{% if needs_followup == 1
-          %}&nbsp;&middot;&nbsp;additional information required{% endif %}</div>{%
-          if followup_questions %}<div style="margin-bottom:16px;padding:14px;background:#f6f6f6;border-radius:6px"><div
-          style="font-size:13px;font-weight:500;margin-bottom:8px;color:#333">Answer
-          these in the chat to complete the requirements</div><ul style="margin:0;padding-left:20px;font-size:13px;line-height:1.7;color:#444">{%
-          for question in followup_questions %}<li>{{ question }}</li>{% endfor %}</ul></div>{%
-          endif %}<form data-format="json"><input type="hidden" name="action" value="approve"
-          />{% for field in [[''issue'', ''Issue'', issue], [''purpose'', ''Purpose'',
-          purpose], [''constraints'', ''Constraints'', constraints], [''request_type'',
-          ''Request Type'', request_type]] %}<label style="display:block;margin-bottom:6px;font-size:13px;font-weight:500">{{
+        template: '<div style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:760px;border:1px
+          solid #dcdcdc;border-radius:10px;padding:24px;"><h2 style="margin:0 0 4px;font-size:18px;font-weight:500">Inquiry
+          details</h2><p style="margin:0 0 20px;font-size:13px;color:#666">Review
+          the extracted requirements, correct anything that is wrong, then press Verify.</p><div
+          style="color: black;margin-bottom:20px;padding:10px 14px;background:{% if
+          confidence >= 70 %}#eaf5ea{% elif confidence >= 40 %}#fdf4e3{% else %}#fbeaea{%
+          endif %};border-radius:6px;font-size:13px">Extraction confidence: <strong>{{
+          confidence }}%</strong>{% if needs_followup == 1 %}&nbsp;&middot;&nbsp;additional
+          information required{% endif %}</div><form data-format="json"><input type="hidden"
+          name="action" value="approve" />{% for field in [[''issue'', ''Issue '',
+          issue], [''purpose'', ''Purpose'', purpose], [''constraints'', ''Constraints'',
+          constraints], [''request_type'', ''Request Type'', request_type]] %}<label
+          style="display:block;margin-bottom:6px;font-size:13px;font-weight:500">{{
           field[1] }}{% if field[0] in missing_fields %} <span style="color:#b3261e;font-weight:400">(needs
           confirmation)</span>{% endif %}</label><textarea name="{{ field[0] }}" rows="3"
-          style="width:100%;box-sizing:border-box;margin-bottom:18px;padding:10px;font:inherit;font-size:14px;border:1px\
-          solid #ccc;border-radius:6px" >{{ field[2] }}</textarea>{% endfor %}<button
-          type="submit" name="action" value="approve" style="padding:11px 26px;font:inherit;font-size:14px;font-weight:500;color:#fff;background:#1a73e8;border:0;border-radius:6px;cursor:pointer">Approve!</button></form>{%
-          endif %}</div>'
+          style="width:100%;box-sizing:border-box;margin-bottom:18px;padding:10px;font:inherit;font-size:14px;border:1px
+          solid #ccc;border-radius:6px">{{ field[2] }}</textarea>{% endfor %}{% if
+          followup_questions %}<div style="margin-bottom:8px;padding:14px;background:#f6f6f6;border-radius:6px"><div
+          style="font-size:13px;font-weight:500;margin-bottom:8px">Please answer on
+          new chat to complete the requirements</div><ul style="margin:0;padding-left:20px;font-size:13px;line-height:1.7;color:#444">{%
+          for question in followup_questions %}<li>{{ question }}</li>{% endfor %}</ul></div>{%
+          endif %}<button type="submit" name="action" value="approve" style="padding:11px
+          26px;font:inherit;font-size:14px;font-weight:500;color:#fff;background:#1a73e8;border:0;border-radius:6px;cursor:pointer">Approve!</button></form></div>'
         title: Render Approve Form
         type: template-transform
         variables:
@@ -813,7 +827,7 @@ workflow:
       positionAbsolute:
         x: 997.104131600237
         y: 653.9255795696026
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -991,13 +1005,8 @@ workflow:
         selected: false
         template: "<div style=\"font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:860px;border:1px\
           \ solid #dcdcdc;border-radius:10px;padding:24px\">\r\n    <h2 style=\"margin:0\
-          \ 0 4px;font-size:18px;font-weight:500\">Similar proposal cases</h2>\r\n\
-          \    <p style=\"margin:0 0 20px;font-size:13px;color:#666\">Retrieved from\
-          \ internal knowledge for the approved requirements.</p>\r\n    <div style=\"\
-          margin-bottom:20px;padding:12px 14px;background:#f6f6f6;border-radius:6px;font-size:13px;line-height:1.7;color:#333\"\
-          >\r\n      <div><strong>Request type</strong>: {{ request_type }}</div>\r\
-          \n      <div><strong>Issue</strong>: {{ issue }}</div>\r\n      <div><strong>Purpose</strong>:\
-          \ {{ purpose }}</div>\r\n    </div>{% if found == 1 %}<table style=\"width:100%;border-collapse:collapse;font-size:13px\"\
+          \ 0 4px;font-size:18px;font-weight:500\">Similar cases</h2>\r\n    {% if\
+          \ found == 1 %}<table style=\"width:100%;border-collapse:collapse;font-size:13px\"\
           >\r\n      <thead>\r\n        <tr style=\"text-align:left\">\r\n       \
           \   <th style=\"padding:10px;border:1px solid #ddd;width:40px\">No</th>\r\
           \n          <th style=\"padding:10px;border:1px solid #ddd;width:22%\">Title</th>\r\
@@ -1091,7 +1100,7 @@ workflow:
       type: custom
       width: 242
     viewport:
-      x: -699.671440432078
-      y: -249.82542031851222
-      zoom: 1.0000000000000007
+      x: -714.9382712296879
+      y: 118.11824206413166
+      zoom: 0.6597539553864482
   rag_pipeline_variables: []
